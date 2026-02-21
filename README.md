@@ -135,8 +135,6 @@ Enter Zone Code: ZONE-B
 SUCCESSFULLY EXECUTED
 ```
 
----
-
 ##  Project Output Screenshot
 
 <img width="1916" height="723" alt="Screenshot 2026-02-21 104014" src="https://github.com/user-attachments/assets/2915f1dc-ffc0-4171-a121-490c823c2d17" />
@@ -157,7 +155,6 @@ SUCCESSFULLY EXECUTED
 
 ##  Project Structure
 
-```
 MunicipalParkingPermitSystem-HibernateConsole/
 │
 ├── pom.xml
