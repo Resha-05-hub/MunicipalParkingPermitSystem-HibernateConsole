@@ -1,9 +1,9 @@
-# 🚗 Municipal Parking Permit System
+#  Municipal Parking Permit System
 ### Hibernate Console-Based Java Application
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 The **Municipal Parking Permit System** is a console-based Java backend application developed using **Hibernate ORM** and **Oracle XE Database**.
 
@@ -20,7 +20,7 @@ The project demonstrates real-world database interaction using ORM mapping and t
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - Java (JDK 8+)
 - Hibernate ORM 5.6.15.Final
@@ -32,9 +32,9 @@ The project demonstrates real-world database interaction using ORM mapping and t
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
-### 1️⃣ PERMIT_HOLDER_TBL
+###  PERMIT_HOLDER_TBL
 
 | Column Name | Description |
 |-------------|-------------|
@@ -50,7 +50,7 @@ The project demonstrates real-world database interaction using ORM mapping and t
 
 ---
 
-### 2️⃣ PARKING_PERMIT_TBL
+###  PARKING_PERMIT_TBL
 
 | Column Name | Description |
 |-------------|-------------|
@@ -67,7 +67,7 @@ The project demonstrates real-world database interaction using ORM mapping and t
 
 ---
 
-## 🔗 Entity Relationship
+##  Entity Relationship
 
 - One Permit Holder ➝ Multiple Parking Permits  
 - Relationship Type: **One-To-Many**
@@ -75,19 +75,19 @@ The project demonstrates real-world database interaction using ORM mapping and t
 
 ---
 
-## ▶️ How to Run the Project
+##  How to Run the Project
 
-### 1️⃣ Start Oracle XE Database
+### 1️) Start Oracle XE Database
 
 Start the database service.
 
-### 2️⃣ Start Listener
+### 2️) Start Listener
 
 ```bash
 lsnrctl start
 ```
 
-### 3️⃣ Configure `hibernate.cfg.xml`
+### 3️) Configure `hibernate.cfg.xml`
 
 ```xml
 <property name="hibernate.connection.url">
@@ -103,7 +103,7 @@ lsnrctl start
 </property>
 ```
 
-### 4️⃣ Run Main Class
+### 4️) Run Main Class
 
 Run:
 
@@ -113,7 +113,7 @@ ParkingMain.java
 
 ---
 
-## 🖥️ Sample Console Output
+##  Sample Console Output
 
 ```
 === Municipal Parking Permit System (Hibernate) ===
@@ -137,9 +137,8 @@ SUCCESSFULLY EXECUTED
 
 ---
 
-## 📸 Project Output Screenshot
+##  Project Output Screenshot
 
-```
 <img width="1916" height="723" alt="Screenshot 2026-02-21 104014" src="https://github.com/user-attachments/assets/2915f1dc-ffc0-4171-a121-490c823c2d17" />
 
 ```
@@ -156,7 +155,7 @@ SUCCESSFULLY EXECUTED
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 MunicipalParkingPermitSystem-HibernateConsole/
@@ -199,7 +198,7 @@ MunicipalParkingPermitSystem-HibernateConsole/
 
 ---
 
-## 🎯 Key Concepts Implemented
+##  Key Concepts Implemented
 
 - Hibernate Configuration
 - ORM Mapping using Annotations
@@ -212,7 +211,7 @@ MunicipalParkingPermitSystem-HibernateConsole/
 
 ---
 
-## 🚀 Learning Outcomes
+##  Learning Outcomes
 
 Through this project, I gained hands-on experience in:
 
@@ -224,14 +223,14 @@ Through this project, I gained hands-on experience in:
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **RASMI RESHA A**  
 B.E Computer Science Engineering  
 
 ---
 
-## 🔗 GitHub Repository
+##  GitHub Repository
 
 ```
 https://github.com/Resha-05-hub/MunicipalParkingPermitSystem-HibernateConsole.git
