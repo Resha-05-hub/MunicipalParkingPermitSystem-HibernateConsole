@@ -11,69 +11,59 @@ import com.kce.util.ValidationException;
 
 public class ParkingService {
 
-    private PermitHolderDAO holderDAO = new PermitHolderDAO();
-    private ParkingPermitDAO permitDAO = new ParkingPermitDAO();
+	private PermitHolderDAO holderDAO = new PermitHolderDAO();
+	private ParkingPermitDAO permitDAO = new ParkingPermitDAO();
 
-    // Register Holder
-    public boolean registerNewPermitHolder(PermitHolder holder)
-            throws ValidationException {
+	public boolean registerNewPermitHolder(PermitHolder holder) throws ValidationException {
 
-        if (holder == null || holder.getPermitHolderID() == null)
-            throw new ValidationException();
+		if (holder == null || holder.getPermitHolderID() == null)
+			throw new ValidationException();
 
-        return holderDAO.save(holder);
-    }
+		return holderDAO.save(holder);
+	}
 
-    // View Holder
-    public PermitHolder viewPermitHolderDetails(String holderID) {
-        return holderDAO.findById(holderID);
-    }
+	public PermitHolder viewPermitHolderDetails(String holderID) {
+		return holderDAO.findById(holderID);
+	}
 
-    // Apply Permit
-    public boolean applyForNewPermit(ParkingPermit permit)
-            throws ValidationException {
+	public boolean applyForNewPermit(ParkingPermit permit) throws ValidationException {
 
-        if (permit == null || permit.getPermitID() == null)
-            throw new ValidationException();
+		if (permit == null || permit.getPermitID() == null)
+			throw new ValidationException();
 
-        return permitDAO.save(permit);
-    }
+		return permitDAO.save(permit);
+	}
 
-    // Renew Permit
-    public boolean renewPermit(String permitID) {
+	public boolean renewPermit(String permitID) {
 
-        ParkingPermit permit = permitDAO.findById(permitID);
+		ParkingPermit permit = permitDAO.findById(permitID);
 
-        if (permit == null)
-            return false;
+		if (permit == null)
+			return false;
 
-        permit.setPermitStatus("ACTIVE");
+		permit.setPermitStatus("ACTIVE");
 
-        return permitDAO.update(permit);
-    }
+		return permitDAO.update(permit);
+	}
 
-    // Record Violation
-    public boolean recordViolation(String permitID, BigDecimal fine) {
+	public boolean recordViolation(String permitID, BigDecimal fine) {
 
-        ParkingPermit permit = permitDAO.findById(permitID);
+		ParkingPermit permit = permitDAO.findById(permitID);
 
-        if (permit == null)
-            return false;
+		if (permit == null)
+			return false;
 
-        permit.setViolationCount(permit.getViolationCount() + 1);
-        permit.setOutstandingFineAmount(
-                permit.getOutstandingFineAmount().add(fine));
+		permit.setViolationCount(permit.getViolationCount() + 1);
+		permit.setOutstandingFineAmount(permit.getOutstandingFineAmount().add(fine));
 
-        return permitDAO.update(permit);
-    }
+		return permitDAO.update(permit);
+	}
 
-    // Calculate total fine
-    public BigDecimal calculateTotalOutstandingFine(String holderID) {
-        return permitDAO.calculateTotalFine(holderID);
-    }
+	public BigDecimal calculateTotalOutstandingFine(String holderID) {
+		return permitDAO.calculateTotalFine(holderID);
+	}
 
-    // View permits
-    public List<ParkingPermit> viewPermitsByHolder(String holderID) {
-        return permitDAO.findByHolder(holderID);
-    }
+	public List<ParkingPermit> viewPermitsByHolder(String holderID) {
+		return permitDAO.findByHolder(holderID);
+	}
 }
